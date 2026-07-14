@@ -1,0 +1,17 @@
+{
+  "name": "fadehost-logging-bot",
+  "version": "1.0.0",
+  "description": "Server audit-log bot for Discord — logs joins, leaves, edits, deletes, bans and role changes to a channel. Hosted by FadeHost.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3"
+  },
+  "license": "MIT"
+}
