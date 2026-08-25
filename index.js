@@ -49,7 +49,14 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
 registerEvents(client, Events);
 
-client.login(token);
+client.login(token).catch((error) => {
+  if (String(error.code) === 'TokenInvalid' || String(error).includes('TOKEN_INVALID')) {
+    console.error('[logging-bot] Discord rejected DISCORD_TOKEN. Reset it at discord.com/developers → your app → Bot → Reset Token, paste the new one under Environment variables in the FadeHost panel, and restart.');
+  } else {
+    console.error(`[logging-bot] Could not log in to Discord: ${error.message}`);
+  }
+  process.exit(1);
+});
 
 for (const signal of ['SIGTERM', 'SIGINT']) {
   process.on(signal, () => {
