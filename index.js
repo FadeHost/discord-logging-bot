@@ -52,6 +52,8 @@ registerEvents(client, Events);
 client.login(token).catch((error) => {
   if (String(error.code) === 'TokenInvalid' || String(error).includes('TOKEN_INVALID')) {
     console.error('[logging-bot] Discord rejected DISCORD_TOKEN. Reset it at discord.com/developers → your app → Bot → Reset Token, paste the new one under Environment variables in the FadeHost panel, and restart.');
+  } else if (String(error.code) === 'DisallowedIntents' || String(error).includes('disallowed intents')) {
+    console.error('[logging-bot] Discord refused the gateway intents this bot needs. Open discord.com/developers → your app → Bot → Privileged Gateway Intents and enable SERVER MEMBERS INTENT and MESSAGE CONTENT INTENT, then restart the bot.');
   } else {
     console.error(`[logging-bot] Could not log in to Discord: ${error.message}`);
   }
