@@ -1,5 +1,7 @@
 # FadeHost Logging Bot
 
+[![Deploy to FadeHost](https://fadehost.com/deploy-button.svg)](https://laplace.fadehost.com/register?intent=bot&repo=https://github.com/FadeHost/discord-logging-bot)
+
 A server audit-log bot for Discord. Logs joins, leaves, deleted/edited messages, bans, role changes, nickname changes and voice activity to a channel of your choice.
 
 ## Setup on FadeHost
